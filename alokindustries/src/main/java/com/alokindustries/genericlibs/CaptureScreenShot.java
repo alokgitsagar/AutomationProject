@@ -17,7 +17,7 @@ public class CaptureScreenShot {
 		String s1=ldt.toString().replace(":","-");
 		TakesScreenshot ts=(TakesScreenshot) driver;
 		File src = ts.getScreenshotAs(OutputType.FILE);
-		File dest=new File("./errorscreenshots"+s1+name+".png");
+		File dest=new File("./errorscreenshots/"+s1+name+".png");
 		try {
 			FileUtils.copyFile(src, dest);
 		} catch (IOException e) {
