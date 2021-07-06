@@ -7,10 +7,10 @@ import com.alokindustries.pages.HomePage;
 import com.alokindustries.pages.ProductsPage;
 import com.alokindustries.pages.SelectedProductPage;
 
-public class AddToCart extends BaseClass {
-	
+public class RemoveFromCartTest extends BaseClass {
+
 	@Test
-	public void addToCart()
+	public void removeFromCartMethod() throws InterruptedException
 	{
 		HomePage hp=new HomePage(driver);
 		ProductsPage pp=hp.search(pfd.getData("searchfield"), driver);
@@ -19,9 +19,10 @@ public class AddToCart extends BaseClass {
 		au.dropDown(spp.getSizeofDress(),pfd.getData("size"));
 		spp.selectColorofDress();
 		spp.addtoCart();
+		spp.closesuccessTab();
+		au.mouseHover(driver, spp.cartShow());
+		spp.removeFromCart();
+		
 		
 	}
-	
-	
-
 }
